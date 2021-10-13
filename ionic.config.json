@@ -1,0 +1,7 @@
+{
+  "name": "melika-website",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
