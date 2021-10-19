@@ -2,3 +2,7 @@
 	height: 355px;
 	width: auto;
 }
+
+ion-card {
+	height: 100%;
+}

@@ -16,33 +16,47 @@ import React, { useState } from 'react'
 import image1 from '../assets/images/image1.jpeg'
 import image2 from '../assets/images/image2.jpeg'
 import image3 from '../assets/images/image3.jpeg'
+import image4 from '../assets/images/image4.jpeg'
+import image5 from '../assets/images/image5.jpeg'
+import image6 from '../assets/images/image6.jpeg'
 
 import ImageCard from './ImageCard'
 import MobileCard from './MobileCard'
 
 import { Image } from '../Types/ImageType'
 
-import { aboutMe, myServices } from '../assets/words/descriptions'
-import ServiceModal from './ServiceModal'
+import {
+	aboutMe,
+	myServices,
+	loveStory6,
+	loveStory5,
+	epic,
+	endless,
+	lily,
+	capture,
+} from '../assets/words/descriptions'
 import AboutMeModal from './AboutMeModal'
 
 const images1: Image[] = [
-	{ src: image1, text: 'test image 1', id: 'm1' },
-	{ src: image2, text: 'test image 2', id: 'm2' },
-	{ src: image3, text: 'test image 3', id: 'm3' },
+	{ src: image1, title: 'Capture', text: capture, id: 'm1' },
+	{ src: image2, title: 'Lily', text: lily, id: 'm2' },
+	{ src: image3, title: 'Endless', text: endless, id: 'm3' },
+]
+
+const images2: Image[] = [
+	{ src: image4, title: 'Epic', text: epic, id: 'm4' },
+	{ src: image5, title: 'Love Story', text: loveStory5, id: 'm5' },
+	{ src: image6, title: 'Love Story ', text: loveStory6, id: 'm6' },
 ]
 
 const Body: React.FC = () => {
 	const [showAbout, setShowAbout] = useState<boolean>(false)
-	const [showServices, setShowServices] = useState<boolean>(false)
 
 	// show detail toggle function
 	const showDetail = (det: string) => {
 		switch (det) {
 			case 'about':
 				return setShowAbout(!showAbout)
-			case 'service':
-				return setShowServices(!showServices)
 		}
 	}
 
@@ -61,32 +75,30 @@ const Body: React.FC = () => {
 			<IonGrid fixed>
 				<IonRow>
 					<IonCol>
-						<IonCard className='ion-text-center'>
+						<IonCard>
 							<IonCardHeader>
-								<IonCardTitle>
+								<IonCardTitle className='ion-text-center'>
 									<IonItem detail button onClick={() => showDetail('about')}>
-										<h4>A Little About Me...</h4>
+										<h3>A Little Bit More About Me...</h3>
+										{showAbout && (
+											<AboutMeModal
+												show={showAbout}
+												aboutMe={aboutMe}
+												showDetail={() => showDetail('about')}
+											/>
+										)}
 									</IonItem>
 								</IonCardTitle>
 							</IonCardHeader>
-							<IonCardContent>
-								{showAbout && (
-									<AboutMeModal
-										show={showAbout}
-										aboutMe={aboutMe}
-										showDetail={() => showDetail('about')}
-									/>
-								)}
-							</IonCardContent>
 						</IonCard>
 					</IonCol>
 				</IonRow>
 				<IonRow>
-					<IonCol>
+					<IonCol className='ion-text-center'>
 						<IonCard>
 							<IonCardHeader>
 								<IonCardTitle>
-									<h4>Available Services</h4>
+									<h3>Available Services</h3>
 								</IonCardTitle>
 							</IonCardHeader>
 							<IonCardContent>
@@ -99,9 +111,10 @@ const Body: React.FC = () => {
 						</IonCard>
 					</IonCol>
 				</IonRow>
+				{isPlatform('desktop') && <ImageCard images={images2} />}
+				{isPlatform('mobileweb') && <MobileCard images={images2} />}
 				{isPlatform('desktop') && <ImageCard images={images1} />}
 				{isPlatform('mobileweb') && <MobileCard images={images1} />}
-				<IonRow></IonRow>
 				<IonRow>
 					<IonCol>
 						<IonCard className='ion-text-center'>
@@ -115,7 +128,7 @@ const Body: React.FC = () => {
 											<IonCard>
 												<IonCardContent>
 													<p>instagram.com/artbykcobi</p>
-													<IonButton onClick={instaLink}>My Instagram</IonButton>
+													<IonButton onClick={instaLink}>Instagram</IonButton>
 												</IonCardContent>
 											</IonCard>
 										</IonCol>
@@ -123,7 +136,7 @@ const Body: React.FC = () => {
 											<IonCard>
 												<IonCardContent>
 													<p>maminimeli@gmail.com</p>
-													<IonButton onClick={emailButtonLink}>Email Me </IonButton>
+													<IonButton onClick={emailButtonLink}>Email Me</IonButton>
 												</IonCardContent>
 											</IonCard>
 										</IonCol>

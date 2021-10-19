@@ -17,3 +17,45 @@ export const myServices: service[] = [
 	{ id: 4, text: 'Limited art available for local galleries and museums' },
 	{ id: 5, text: 'Collaboration with local artists' },
 ]
+
+export const loveStory6 = `
+The minute I heard my first love story,
+I started looking for you, not knowing
+how blind that was.
+Lovers don't finally meet somewhere.
+They're in each other all along.
+`
+export const loveStory5 = `
+“ In your light I learn how to love. In your beauty, how to make poems. You dance inside my chest where no-one sees you, but sometimes I do, and that sight becomes this art.”
+Rumi
+`
+
+export const epic = `
+“ I speak out of the deep of night 
+out of the deep of darkness 
+and out of the deep of night I speak. 
+If you come to my house, friend 
+bring me a lamp and a window I can look through 
+at the crowd in the happy alley.”
+Forough farrokhzad
+`
+
+export const endless = `
+“I was falling. Falling through time and space and stars and sky and everything in between. I fell for days and weeks and what felt like lifetime across lifetimes. I fell until I forgot I was falling.”
+Jess Rothenberg
+`
+
+export const lily = `
+“One must be a sea, to receive a polluted stream without becoming impure.”
+Friedrich Nietzsche
+`
+
+export const capture = `
+But one night, 
+I will wear a mask- 
+made of the thirst- 
+of the remotest shores, 
+and their desert islands. 
+And I’ll capture you- in my absorbing sands, 
+forever far away- from your naval natal lands. 
+`

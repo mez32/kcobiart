@@ -16,14 +16,13 @@ const ImageCard: React.FC<{ images: Image[] }> = (props) => {
 								<img className='image-container' src={image.src} />
 							</div>
 							<IonCardHeader>
-								<IonCardTitle>test {image.id}</IonCardTitle>
+								<IonCardTitle>{image.title}</IonCardTitle>
 							</IonCardHeader>
 							<IonCardContent>{image.text}</IonCardContent>
 						</IonCard>
 					</IonCol>
 				</IonRow>
 			))}
-			Ï
 		</>
 	)
 }
